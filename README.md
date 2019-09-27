@@ -59,12 +59,12 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
 ```golang
 //用来存储读取页面的参数结构体
 type selpgArgs struct{
-startPage int
-endPage int
-inFilename string
-pageLen int
-pageType int
-printDest string
+  startPage int
+  endPage int
+  inFilename string
+  pageLen int
+  pageType int
+  printDest string
 }
 type spArgs selpgArgs //简写，方便代码书写
 
