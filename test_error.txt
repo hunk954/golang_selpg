@@ -1,0 +1,7 @@
+DEBUG: psa.start_page = 10
+DEBUG: psa.end_page = 10
+DEBUG: psa.page_len = 72
+DEBUG: psa.page_type = l
+DEBUG: psa.print_dest = 
+DEBUG: psa.in_filename = test.txt
+selpg: start_page (10) greater than total pages (2), no output written
