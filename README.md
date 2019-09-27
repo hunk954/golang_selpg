@@ -75,5 +75,8 @@ stdout.WriteString(inputString)
     func main()
     ```
 
-### 3、函数分析
+### 3、主要函数分析
+#### processArgs(psa *spArgs)
+#### processInput(sa spArgs)
+
 ## 四、selpg使用测试
