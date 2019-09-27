@@ -22,5 +22,28 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
 
 
 ## 三、selpg程序代码实现
+### 1.与C语言的对比
+- 参数的读取：C语言的处理方式是通过main()中的argv[]进行读取分析。golang虽然在os包中也有类似的os.Args[]为我们实现同样的功能，但是同时也提供了一种更好的分析参数的方法：flag。  
+`flag.IntVar(&name,"flag",defaultValue,"info")`  
+可以让程序自动读取'-flag'的参数值，其值会存入变量name中，如果我们并没有输入该参数，那么变量的值缺省为defaultValue，在Usage中会提供提示信息“info”提示我们该参数的用处。对于string、bool的设置只要将方法名中的Int改成对应的类型名即可（注：导出的函数首字母大写）。
 
+### 2.基本框架
+```golang
+//用来存储读取页面的参数结构体
+type selpgArgs struct{
+	startPage int
+	endPage int
+	inFilename string
+	pageLen int
+	pageType int
+	printDest string
+}
+type spArgs selpgArgs //简写，方便代码书写
+
+func usage()//程序出错时打印使用说明
+func processArgs(psa *spArgs)//处理参数，参数传指针储存参数
+func processInput(sa spArgs)//根据参数要求执行文本输入
+func init()//golang特性与main一样会被默认执行，这里放设置pflag参数的代码
+func main()
+```
 ## 四、selpg使用测试
