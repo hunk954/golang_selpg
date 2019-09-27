@@ -93,7 +93,9 @@ func main()
     ```
 #### processInput(sa spArgs)
 - 主要是文件读取代码的书写，过程同**与C语言的对比-文件读取**中的代码。
-- 管道的实现通过使用方法`cmd.StdoutPipe()`。cmd是`exec.Command(s1,s2)`的返回纸，表示的是运行s1指令（参数为s2）返回的句柄。通过对cmd执行上述命令及`.Start()`方法，实现原本管道的效果。
+- 管道的实现通过使用方法`cmd.StdoutPipe()`。cmd是`exec.Command(s1,s2)`的返回值，表示的是运行s1指令（参数为s2）返回的句柄。通过对cmd执行上述命令及`.Start()`方法，实现原本管道的效果。
 
 ## 四、selpg使用测试
+- selpg -s1 -e1 test.txt
+![](/img/1.png)
 
