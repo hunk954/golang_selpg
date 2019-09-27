@@ -29,9 +29,9 @@ flag.IntVar(&name,"flag",defaultValue,"info")
 flag.Usage = usage
 flag.Parse()
 ```  
-`flag.IntVar()`可以让程序自动读取`'-flag'`的参数值，其值会存入变量`name`中，如果我们并没有输入该参数，那么变量的值缺省为`defaultValue`，在Usage中会提供提示信息`“info”`提示我们该参数的用处。对于string、bool的设置只要将方法名中的Int改成对应的类型名即可（注：导出的函数首字母大写）。  
-`flag.Usage`主要是设置我们的使用手册调用的函数 
-`flag.Parse()`用于析取参数，运行该命令之后，我们参数值对应的变量就会被刷新为我们输入的参数值
+  - `flag.IntVar()`可以让程序自动读取`'-flag'`的参数值，其值会存入变量`name`中，如果我们并没有输入该参数，那么变量的值缺省为`defaultValue`，在Usage中会提供提示信息`“info”`提示我们该参数的用处。对于string、bool的设置只要将方法名中的Int改成对应的类型名即可（注：导出的函数首字母大写）。    
+  - `flag.Usage`主要是设置我们的使用手册调用的函数   
+  - `flag.Parse()`用于析取参数，运行该命令之后，我们参数值对应的变量就会被刷新为我们输入的参数值  
 
 
 
