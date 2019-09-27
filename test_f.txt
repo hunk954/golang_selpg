@@ -1,0 +1,21 @@
+1-1:dhaushd
+1-2:dhaushd
+1-3:dhaushd
+1-4:dhaushd
+1-5:dhaushd
+2-1:dhaushd
+2-2:dhaushd
+2-3:dhaushd
+2-4:dhaushd
+2-5:dhaushd
+3-1:dhaushd
+3-2:dhaushd
+3-3:dhaushd
+3-4:dhaushd
+3-5:dhaushd
+4-1:dhaushd
+4-2:dhaushd
+4-3:dhaushd
+4-4:dhaushd
+4-5:dhaushd
+

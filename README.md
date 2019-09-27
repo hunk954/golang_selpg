@@ -96,6 +96,26 @@ func main()
 - 管道的实现通过使用方法`cmd.StdoutPipe()`。cmd是`exec.Command(s1,s2)`的返回值，表示的是运行s1指令（参数为s2）返回的句柄。通过对cmd执行上述命令及`.Start()`方法，实现原本管道的效果。
 
 ## 四、selpg使用测试
-- selpg -s1 -e1 test.txt  
+测试文本输入为`test.txt`，每一行为`行号 随机字符串`
+- `selpg -s1 -e1 test.txt `，可以看到在命令行中输出72行的字符串
+![1](/img/1.png)
+- `selpg -s1 -e1 < test.txt` 结果与上图一致  
+![2](/img/1.png)
+- `ls | selpg -s1 -e1` 将`ls`命令的结果输出如下  
+![3](/img/3.png)
+- `selpg -s1 -e1 test.txt > test2.txt`可以看到test2.txt成功被输出72行  
+![4](/img/4.png)
+- `selpg -s10 -e20 test.txt 2>test_error.txt`由于test.txt只有两页，而我们此处的页数范围为10-20页，并不符合文本本身有的页数，所以会导致错误信息。在test_error.txt中我们可以看到错误信息  
+![5](/img/5.png)
+ - `selpg -s10 -e20 test.txt >test3.txt 2>/dev/null` 可以看到错误信息被扔弃，而test3.txt中没有信息，因为参数出错，最后输出为空  
+ ![6](/img/6.png)
+ ![7](/img/7.png)
+- `selpg -s1 -e2 test.txt | wc` 其中wc命令会显示选定范围的页中包含的行数、字数和字符数，可以看到如下图实现所需的结果  
+![8](/img/8.png)
+- `selpg -s1 -e1 -l5 test.txt` 打印5行，如下图实现  
+![9](/img/9.png)
+- `selpg -s1 -e1 -f test.txt`首先我使用C语言的文件读写，将含有'\f'的字符串写入`test_f.txt`中，之后我们可以看到如下图实现所需的结果  
+![10](/img/10.png)
+
 
 

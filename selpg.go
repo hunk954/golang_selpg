@@ -155,13 +155,13 @@ func processInput(sa spArgs){
 			if readerError != nil{
 				break
 			}
+			if pageCtr >= sa.startPage && pageCtr <= sa.endPage{
+					stdout.WriteString(inputString)
+			}
 			lineCtr++
 			if lineCtr > sa.pageLen{
 				pageCtr++
 				lineCtr = 1
-			}
-			if pageCtr >= sa.startPage && pageCtr <= sa.endPage{
-					stdout.WriteString(inputString)
 			}
 		}
 	}else{
@@ -171,10 +171,10 @@ func processInput(sa spArgs){
 			if readerError != nil{
 				break
 			}
-			pageCtr++
 			if pageCtr >= sa.startPage && pageCtr <= sa.endPage{
 				stdout.WriteString(inputString)
 			}
+			pageCtr++
 		}
 	}
 	if pageCtr < sa.startPage{
