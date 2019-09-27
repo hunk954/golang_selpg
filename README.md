@@ -32,8 +32,26 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
     flag.Usage = usage
     flag.Parse()
     ```  
+- fprintf()与exit()方法：主要是调用`fmt.Fprintf()`和`os.Exit()`方法，效果和C语言大同小异
+- 文件指针：C语言中的`FILE*`对应`*os.FILE`,`stderr/stdin/stdout`对应`os.Stderr/os.Stdin/os.Stdout`
+- 文件读取：过程与C语言相仿，首先获取指针后声明缓存空间，读取文本，输出文本，使用的函数接口如下
+```golang
+//----1.获得输入文件指针----
+inputFile, err := os.Open(filename)
+// inputfile := os.Stdin 
+if err != nil{ 
+  //error process
+}
+//----2.声明缓存器-----
+inputReader := bufio.newReader(inputFile)
 
+//----3.读取文本-----
+inputString, err := inputReader.ReadString('\n')  //表示以'\n'为分界
 
+//----4.获取输出文件指针并输出----
+stdout := os.Stdout
+stdout.WriteString(inputString)
+```
 
 
 ### 2.基本框架
