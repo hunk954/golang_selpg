@@ -96,6 +96,6 @@ func main()
 - 管道的实现通过使用方法`cmd.StdoutPipe()`。cmd是`exec.Command(s1,s2)`的返回值，表示的是运行s1指令（参数为s2）返回的句柄。通过对cmd执行上述命令及`.Start()`方法，实现原本管道的效果。
 
 ## 四、selpg使用测试
-- selpg -s1 -e1 test.txt
-![](/img/1.png)
+- selpg -s1 -e1 test.txt  
+
 
