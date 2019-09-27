@@ -56,24 +56,24 @@ stdout.WriteString(inputString)
 
 
 ### 2、基本框架
-```golang
-//用来存储读取页面的参数结构体
-type selpgArgs struct{
-	startPage int
-	endPage int
-	inFilename string
-	pageLen int
-	pageType int
-	printDest string
-}
-type spArgs selpgArgs //简写，方便代码书写
+    ```golang
+    //用来存储读取页面的参数结构体
+    type selpgArgs struct{
+      startPage int
+      endPage int
+      inFilename string
+      pageLen int
+      pageType int
+      printDest string
+    }
+    type spArgs selpgArgs //简写，方便代码书写
 
-func usage()//程序出错时打印使用说明
-func processArgs(psa *spArgs)//处理参数，参数传指针储存参数
-func processInput(sa spArgs)//根据参数要求执行文本输入
-func init()//golang特性与main一样会被默认执行，这里放设置pflag参数的代码
-func main()
-```
+    func usage()//程序出错时打印使用说明
+    func processArgs(psa *spArgs)//处理参数，参数传指针储存参数
+    func processInput(sa spArgs)//根据参数要求执行文本输入
+    func init()//golang特性与main一样会被默认执行，这里放设置pflag参数的代码
+    func main()
+    ```
 
 ### 3、函数分析
 ## 四、selpg使用测试
