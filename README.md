@@ -11,8 +11,8 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
   -f, --pageType                 fragment  according to "f" 
   -s, --startpage int            Index of the start page (default -1)
 ```
-- 通过命令行参数，selpg读取初始页与结束页，所以selpg包括文件名在内**至少有三个参数**。
-    ```selpg -s[startpage] -e[endpage]```
+- 通过命令行参数，selpg读取初始页与结束页，所以selpg包括文件名在内**至少有三个参数**。  
+    ```selpg -s[startpage] -e[endpage]```  
     这时的功能表示从标准输入中读取初始页到结束页的页数范围内的内容。**如果在参数最后加上文件名，则表示从输入文件中读取对应的内容。**
 - 下面讲述其他可选参数的功能
     - `lNumber`：表示文本读取对页的定义是一页Number行，程序默认为按72行为一页读取。且该参数与`-f`是互斥的
