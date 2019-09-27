@@ -23,7 +23,7 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
 
 ## 三、selpg程序代码实现
 ### 1.与C语言的对比
-- 参数的读取：C语言的处理方式是通过main()中的argv[] 进行读取分析。golang虽然在os包中也有类似的os.Args[]为我们实现同样的功能，但是同时也提供了一种更好的分析参数的方法：flag。而pflag与flag大同小异，所以这里主要讲flag，实际代码用的是pflag。 [flag与pflag](https://o-my-chenjian.com/2017/09/20/Using-Flag-And-Pflag-With-Golang/)  
+- 参数的读取：C语言的处理方式是通过main()中的argv[] 进行读取分析。golang虽然在os包中也有类似的os.Args[]为我们实现同样的功能，但是同时也提供了一种更好的分析参数的方法：flag。而pflag与flag大同小异，所以这里主要讲flag，实际代码用的是pflag。 [参考：golang中使用flag与pflag](https://o-my-chenjian.com/2017/09/20/Using-Flag-And-Pflag-With-Golang/)  
 ```golang
 flag.IntVar(&name,"flag",defaultValue,"info")
 flag.Usage = usage
@@ -32,7 +32,7 @@ flag.Parse()
 `flag.IntVar()`可以让程序自动读取`'-flag'`的参数值，其值会存入变量`name`中，如果我们并没有输入该参数，那么变量的值缺省为`defaultValue`，在Usage中会提供提示信息`“info”`提示我们该参数的用处。对于string、bool的设置只要将方法名中的Int改成对应的类型名即可（注：导出的函数首字母大写）。  
 `flag.Usage`主要是设置我们的使用手册调用的函数 
 `flag.Parse()`用于析取参数，运行该命令之后，我们参数值对应的变量就会被刷新为我们输入的参数值
-- 
+
 
 
 ### 2.基本框架
