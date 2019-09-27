@@ -36,47 +36,47 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
 - fprintf()与exit()方法：主要是调用`fmt.Fprintf()`和`os.Exit()`方法，效果和C语言大同小异
 - 文件指针：C语言中的`FILE*`对应`*os.FILE`,`stderr/stdin/stdout`对应`os.Stderr/os.Stdin/os.Stdout`
 - 文件读取：过程与C语言相仿，首先获取指针后声明缓存空间，读取文本，输出文本，使用的函数接口如下
-```golang
-//----1.获得输入文件指针----
-inputFile, err := os.Open(filename)
-// inputfile := os.Stdin 
-if err != nil{ 
-  //error process
-}
-//----2.声明缓存器-----
-inputReader := bufio.newReader(inputFile)
+    ```golang
+    //----1.获得输入文件指针----
+    inputFile, err := os.Open(filename)
+    // inputfile := os.Stdin 
+    if err != nil{ 
+      //error process
+    }
+    //----2.声明缓存器-----
+    inputReader := bufio.newReader(inputFile)
 
-//----3.读取文本-----
-inputString, err := inputReader.ReadString('\n')  //表示以'\n'为分界
+    //----3.读取文本-----
+    inputString, err := inputReader.ReadString('\n')  //表示以'\n'为分界
 
-//----4.获取输出文件指针并输出----
-stdout := os.Stdout
-stdout.WriteString(inputString)
-```
+    //----4.获取输出文件指针并输出----
+    stdout := os.Stdout
+    stdout.WriteString(inputString)
+    ```
 
 
 ### 2、基本框架
-    ```golang
-    //用来存储读取页面的参数结构体
-    type selpgArgs struct{
-      startPage int
-      endPage int
-      inFilename string
-      pageLen int
-      pageType int
-      printDest string
-    }
-    type spArgs selpgArgs //简写，方便代码书写
+```golang
+//用来存储读取页面的参数结构体
+type selpgArgs struct{
+startPage int
+endPage int
+inFilename string
+pageLen int
+pageType int
+printDest string
+}
+type spArgs selpgArgs //简写，方便代码书写
 
-    func usage()//程序出错时打印使用说明
-    func processArgs(psa *spArgs)//处理参数，参数传指针储存参数
-    func processInput(sa spArgs)//根据参数要求执行文本输入
-    func init()//golang特性与main一样会被默认执行，这里放设置pflag参数的代码
-    func main()
-    ```
+func usage()//程序出错时打印使用说明
+func processArgs(psa *spArgs)//处理参数，参数传指针储存参数
+func processInput(sa spArgs)//根据参数要求执行文本输入
+func init()//golang特性与main一样会被默认执行，这里放设置pflag参数的代码
+func main()
+```
 
 ### 3、主要函数分析
-- #### processArgs(psa *spArgs)
-- #### processInput(sa spArgs)
+#### processArgs(psa *spArgs)
+#### processInput(sa spArgs)
 
 ## 四、selpg使用测试
