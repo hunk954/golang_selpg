@@ -5,11 +5,11 @@
 ## 二、selpg使用及参数说明
 ```
 USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_filename ]
+  -s, --startpage int            Index of the start page (default -1)
   -e, --endpage int              Index of the end page (default -1)
   -d, --pageDestination string   printer destination (default "-")
   -l, --pageLength int           page length (default -1)
   -f, --pageType                 fragment  according to "f" 
-  -s, --startpage int            Index of the start page (default -1)
 ```
 - 通过命令行参数，selpg读取初始页与结束页，所以selpg包括文件名在内**至少有三个参数**。  
     ```selpg -s[startpage] -e[endpage]```  
@@ -21,4 +21,6 @@ USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_f
     - `-dDestination`：表示文本选定的页将发送到打印机，Destination”应该是 lp 命令“-d”选项可接受的打印目的地名称。该目的地应该存在 ― selpg 不检查这一点。在运行了带“-d”选项的 selpg 命令后，若要验证该选项是否已生效，请运行命令“lpstat -t”。该命令应该显示添加到“Destination”打印队列的一项打印作业。如果当前有打印机连接至该目的地并且是启用的，则打印机应打印该输出
 
 
-### 三、selpg程序说明
+## 三、selpg程序代码实现
+
+## 四、selpg使用测试
