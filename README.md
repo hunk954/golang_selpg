@@ -3,6 +3,7 @@
  selpg是从文本输入选择页范围的实用程序。该文本输入可以来自作为最后一个命令行参数指定的文件，在没有给出文件名参数时也可以来自标准输入
 
 ## 二、selpg使用及参数说明
+- clone到本地后执行`go install github.com/user/selpg`之后可以使用
 ```
 USAGE: selpg -sstart_page -eend_page [ -f | -llines_per_page ] [ -ddest ] [ in_filename ]
   -s, --startpage int            Index of the start page (default -1)
