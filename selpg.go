@@ -148,7 +148,7 @@ func processInput(sa spArgs){
 		stdout = os.Stdout
 	}
 	if sa.pageType == 'l'{
-		lineCtr := 0 //line counter
+		lineCtr := 1 //line counter
 		pageCtr = 1 // page counter
 		for {
 			inputString, readerError := inputReader.ReadString('\n')

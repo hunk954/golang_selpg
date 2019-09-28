@@ -96,7 +96,8 @@ func main()
 - 管道的实现通过使用方法`cmd.StdoutPipe()`。cmd是`exec.Command(s1,s2)`的返回值，表示的是运行s1指令（参数为s2）返回的句柄。通过对cmd执行上述命令及`.Start()`方法，实现原本管道的效果。
 
 ## 四、selpg使用测试
-测试文本输入为`test.txt`，每一行为`行号 随机字符串`
+测试文本1输入为`test.txt`，每一行为`行号 随机字符串`
+测试文本2（含'\f'）的输入为`test_f.txt`，每一行为`行号 随机字符串`
 - `selpg -s1 -e1 test.txt `，可以看到在命令行中输出72行的字符串
 ![1](/img/1.png)
 - `selpg -s1 -e1 < test.txt` 结果与上图一致  
@@ -116,6 +117,5 @@ func main()
 ![9](/img/9.png)
 - `selpg -s1 -e1 -f test.txt`首先我使用C语言的文件读写，将含有'\f'的字符串写入`test_f.txt`中，之后我们可以看到如下图实现所需的结果  
 ![10](/img/10.png)
-
 
 
