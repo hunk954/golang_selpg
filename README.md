@@ -116,6 +116,7 @@ func main()
 - `selpg -s1 -e1 -l5 test.txt` 打印5行，如下图实现  
 ![9](/img/9.png)
 - `selpg -s1 -e1 -f test.txt`首先我使用C语言的文件读写，将含有'\f'的字符串写入`test_f.txt`中，之后我们可以看到如下图实现所需的结果  
+![11](/img/11.png)
 ![10](/img/10.png)
 
 
